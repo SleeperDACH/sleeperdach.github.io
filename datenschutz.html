@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
+<html lang="de"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutzerklärung – MatchUp</title>
@@ -34,7 +33,7 @@
 <body>
 
 <h1>Datenschutzerklärung</h1>
-<p class="stand">für die App <strong>MatchUp</strong> (iOS, Android, Web) · Stand: 14. August 2026</p>
+<p class="stand">für die App <strong>MatchUp</strong> (iOS, Android, Web) · Stand: 21. September 2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>
@@ -54,13 +53,15 @@
 <p>
   Es findet <strong>keine Werbung, kein Tracking und keine Analyse des Nutzungsverhaltens</strong>
   statt. Es werden keine Profile zu Werbezwecken gebildet und keine Daten verkauft.
+  Push-Benachrichtigungen sind freiwillig und dienen ausschließlich Hinweisen auf
+  Ereignisse in deinen Ligen (siehe Abschnitt 6).
 </p>
 
 <h2>3. Welche Daten verarbeitet werden</h2>
 
 <h3>3.1 Kontodaten</h3>
 <table>
-  <tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+  <tbody><tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
   <tr>
     <td>E-Mail-Adresse, Passwort (nur als Hashwert gespeichert)</td>
     <td>Anmeldung, Passwort-Zurücksetzen</td>
@@ -76,11 +77,11 @@
     <td>Freiwillige Personalisierung des Profils</td>
     <td>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</td>
   </tr>
-</table>
+</tbody></table>
 
 <h3>3.2 Spielinhalte</h3>
 <table>
-  <tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+  <tbody><tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
   <tr>
     <td>Abgegebene Tipps samt Zeitpunkt</td>
     <td>Auswertung der Tipprunde, Tabellenstand</td>
@@ -96,7 +97,7 @@
     <td>Austausch mit den übrigen Mitgliedern derselben Liga</td>
     <td>Art. 6 Abs. 1 lit. b DSGVO</td>
   </tr>
-</table>
+</tbody></table>
 <p>
   <strong>Sichtbarkeit:</strong> Nutzername und Profilbild sind für andere angemeldete
   Nutzer sichtbar. Tipps, Kader und Chat-Nachrichten sind nur für die Mitglieder
@@ -141,11 +142,11 @@
   ansprechenden Darstellung).
 </p>
 <table>
-  <tr><th>Anbieter</th><th>Wofür</th></tr>
+  <tbody><tr><th>Anbieter</th><th>Wofür</th></tr>
   <tr><td><code>cdn.sportmonks.com</code></td><td>Liga- und Vereinslogos</td></tr>
   <tr><td><code>r2.thesportsdb.com</code></td><td>Vereinswappen</td></tr>
   <tr><td><code>flagcdn.com</code></td><td>Länderflaggen</td></tr>
-</table>
+</tbody></table>
 <p>
   Sportdaten (Spielpläne, Ergebnisse, Statistiken, Wettquoten, Nachrichten) werden
   <strong>serverseitig</strong> abgerufen — von Sportmonks, OpenLigaDB, the-odds-api
@@ -154,14 +155,60 @@
   Server ausgeht und die Antworten zwischengespeichert werden.
 </p>
 
-<h2>6. E-Mail-Versand</h2>
+<h2>6. Push-Benachrichtigungen</h2>
+<p>
+  Wenn du Push-Benachrichtigungen erlaubst, vergibt das Betriebssystem deines Geräts
+  eine Geräte-Kennung (<strong>Push-Token</strong>). Diese Kennung speichern wir deinem
+  Konto zugeordnet bei Supabase (siehe Abschnitt 4) und nutzen sie ausschließlich, um
+  Benachrichtigungen an genau dieses Gerät zuzustellen.
+</p>
+<table>
+  <tbody><tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+  <tr>
+    <td>Push-Token (Geräte-Kennung), Plattform (iOS/Android), Zeitpunkt der Registrierung</td>
+    <td>Zustellung der Benachrichtigungen an dein Gerät</td>
+    <td>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über den Systemdialog)</td>
+  </tr>
+  <tr>
+    <td>Inhalt der Benachrichtigung (z.&nbsp;B. „Du bist im Draft am Zug", Liganame, Absendername bei Nachrichten)</td>
+    <td>Hinweis auf Ereignisse in deinen Ligen und Tipprunden</td>
+    <td>Art. 6 Abs. 1 lit. a DSGVO</td>
+  </tr>
+</tbody></table>
+<p>
+  <strong>Eingesetzter Dienst:</strong> Der Versand läuft über
+  <strong>Firebase Cloud Messaging (FCM)</strong>, einen Dienst der
+  <strong>Google Ireland Limited</strong>, Gordon House, Barrow Street, Dublin 4,
+  Irland. Google verarbeitet dabei den Push-Token und den Inhalt der Benachrichtigung
+  und leitet sie an den Zustelldienst des Betriebssystems weiter — bei iOS an den
+  Apple Push Notification service (Apple Distribution International Ltd., Hollyhill
+  Industrial Estate, Cork, Irland), bei Android direkt an das Gerät. Mit Google
+  besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO; für Übermittlungen
+  in die USA gelten die EU-Standardvertragsklauseln und die Zertifizierung von Google
+  LLC nach dem EU-US Data Privacy Framework.
+</p>
+<p>
+  <strong>Freiwillig und jederzeit widerrufbar:</strong> Ohne deine Freigabe im
+  Systemdialog wird kein Token erzeugt und nichts an Google übermittelt. Du kannst
+  Benachrichtigungen jederzeit in den Einstellungen deines Geräts oder in der App
+  (<em>Profil → Benachrichtigungen</em>) wieder abschalten; der Token wird dann
+  gelöscht. Ungültig gewordene Tokens — etwa nach Deinstallation — werden beim
+  nächsten Versandversuch automatisch entfernt.
+</p>
+<p>
+  Die Benachrichtigungen dienen <strong>nicht</strong> der Werbung und werden nicht
+  zur Analyse deines Nutzungsverhaltens ausgewertet. Google Analytics für Firebase ist
+  in diesem Projekt nicht aktiviert.
+</p>
+
+<h2>7. E-Mail-Versand</h2>
 <p>
   Zum Zurücksetzen des Passworts versendet Supabase in unserem Auftrag eine E-Mail an
   die angegebene Adresse. Aus Sicherheitsgründen wird dabei nicht offengelegt, ob zu
   einer Adresse ein Konto besteht.
 </p>
 
-<h2>7. Server-Protokolle</h2>
+<h2>8. Server-Protokolle</h2>
 <p>
   Beim Zugriff auf unsere Server fallen technische Protokolldaten an (IP-Adresse,
   Zeitpunkt, aufgerufener Endpunkt, Statuscode). Sie dienen dem Betrieb und der
@@ -169,27 +216,31 @@
   spätestens 30 Tagen gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
 </p>
 
-<h2>8. Speicherdauer</h2>
+<h2>9. Speicherdauer</h2>
 <ul>
   <li>Konto- und Spieldaten: bis zur Löschung des Kontos.</li>
   <li>
     Chat-Nachrichten: Beim Löschen des Kontos werden auch die zugehörigen
     Nachrichten entfernt.
   </li>
+  <li>
+    Push-Token: bis zum Abschalten der Benachrichtigungen, bis zur Deinstallation
+    oder bis zur Löschung des Kontos.
+  </li>
   <li>Server-Protokolle: höchstens 30 Tage.</li>
   <li>Daten auf dem Gerät: bis zur Abmeldung beziehungsweise Deinstallation.</li>
 </ul>
 
-<h2>9. Konto löschen</h2>
+<h2>10. Konto löschen</h2>
 <p>
   Du kannst dein Konto jederzeit <strong>direkt in der App</strong> löschen:
   <em>Profil → Konto löschen</em>. Damit werden das Konto und die daran hängenden
-  Daten (Profil, Tipps, Liga-Mitgliedschaften, Kader, Chat-Nachrichten) endgültig
-  entfernt. Alternativ genügt eine formlose E-Mail an
+  Daten (Profil, Tipps, Liga-Mitgliedschaften, Kader, Chat-Nachrichten, Push-Tokens)
+  endgültig entfernt. Alternativ genügt eine formlose E-Mail an
   <a href="mailto:felix@sohrmann.de">felix@sohrmann.de</a>.
 </p>
 
-<h2>10. Deine Rechte</h2>
+<h2>11. Deine Rechte</h2>
 <p>Dir stehen nach der DSGVO zu:</p>
 <ul>
   <li>Auskunft über die zu dir gespeicherten Daten (Art. 15)</li>
@@ -206,13 +257,13 @@
   Sächsischen Datenschutzbeauftragten.
 </p>
 
-<h2>11. Kinder</h2>
+<h2>12. Kinder</h2>
 <p>
   Die App richtet sich nicht an Kinder unter 16 Jahren. Ist eine nutzende Person
   jünger, ist die Einwilligung der Erziehungsberechtigten erforderlich.
 </p>
 
-<h2>12. Vertriebsplattformen</h2>
+<h2>13. Vertriebsplattformen</h2>
 <p>
   Der Bezug der App erfolgt über den App Store (Apple) beziehungsweise Google Play
   (Google). Für die dort anfallenden Daten — etwa Kaufvorgang, Gerätezuordnung,
@@ -221,11 +272,10 @@
   einzelner Nutzer.
 </p>
 
-<h2>13. Änderungen</h2>
+<h2>14. Änderungen</h2>
 <p>
   Wird die App um Funktionen erweitert, die andere Daten verarbeiten, wird diese
   Erklärung angepasst. Maßgeblich ist die jeweils hier veröffentlichte Fassung.
 </p>
 
-</body>
-</html>
+</body></html>
